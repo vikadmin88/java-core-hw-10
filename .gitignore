@@ -1,4 +1,6 @@
 out/
+*viktest*
+*VikTest*
 .idea/
 target/
 !.mvn/wrapper/maven-wrapper.jar
