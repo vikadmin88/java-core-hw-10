@@ -7,8 +7,7 @@ import java.util.Scanner;
 public class PhoneParserTest {
     public static final String FILE_PATH = "src/m10/task1/file.txt";
 
-    /*
-    987-123-4567
+    /*987-123-4567
     123 456 7890
     (123) 456-7890
     --------------
