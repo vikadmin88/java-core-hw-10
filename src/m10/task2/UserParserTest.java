@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserParserTest {
@@ -33,7 +34,7 @@ public class UserParserTest {
     private static final String FILE_JSON = "user.json";
 
     public static void main(String[] args) {
-        ArrayList<User> users = getUsersFromFile();
+        List<User> users = getUsersFromFile();
         if (users == null) {
             System.out.println("Input file format is not correct or empty. exit...");
             System.exit(-1);
@@ -49,7 +50,7 @@ public class UserParserTest {
 
     }
 
-    private static ArrayList<User> getUsersFromFile() {
+    private static List<User> getUsersFromFile() {
         try (BufferedInputStream bufInput = new BufferedInputStream(new FileInputStream(FILE))) {
             Scanner scanner = new Scanner(bufInput);
 
@@ -59,7 +60,7 @@ public class UserParserTest {
             }
 
             scanner.nextLine();
-            ArrayList<User> users = new ArrayList<>();
+            List<User> users = new ArrayList<>();
             String name;
             int age;
             while (scanner.hasNext()) {
@@ -77,7 +78,7 @@ public class UserParserTest {
         return null;
     }
 
-    private static String getJsonFromList(ArrayList<User> users) {
+    private static String getJsonFromList(List<User> users) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(users);
     }
